@@ -18,6 +18,9 @@ export PATH="~/Sites/12wbt-init/bin:$PATH"
 # you only need this one if you want to use the heroku toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export PATH="~/Sites/huggies-init/bin:$PATH"
+export PATH="~/Sites/12wbt-init/bin:$PATH"
+
 # http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
 # this lets you compile mysql + mysql2 gems on mountain lion
 export CPPFLAGS=-I/opt/X11/include
