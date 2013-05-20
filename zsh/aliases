@@ -26,8 +26,14 @@ alias sg='script/generate'
 alias a='autotest -rails'
 alias tlog='tail -f log/development.log'
 alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
+alias migrate='rake db:migrate db:test:prepare'
 alias rst='touch tmp/restart.txt'
+
+# bundler
+alias bi='bundle install'
+alias bu='bundle update'
+alias be='bundle exec'
+alias bs='bundle show'
 
 # commands starting with % for pasting from web
 alias %=' '
