@@ -10,6 +10,7 @@ alias la='ls -A'
 # git
 alias g='git'
 alias gl='git pull'
+alias glu='git pull upstream master'
 alias gp='git push'
 alias gd='git diff'
 alias gc='git commit'
@@ -17,8 +18,18 @@ alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
+alias gad='git add'
+alias gada='git add -A'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+
+# bundler
+alias bi='bundle install'
+alias bu='bundle update'
+alias be='bundle exec'
+alias bs='bundle show'
+alias brk='bundle exec rake'
+alias brl='bundle exec rails'
 
 # rails
 alias sc='script/console'
@@ -29,12 +40,6 @@ alias tlog='tail -f log/development.log'
 alias scaffold='script/generate nifty_scaffold'
 alias migrate='rake db:migrate db:test:prepare'
 alias rst='touch tmp/restart.txt'
-
-# bundler
-alias bi='bundle install'
-alias bu='bundle update'
-alias be='bundle exec'
-alias bs='bundle show'
 
 # commands starting with % for pasting from web
 alias %=' '
