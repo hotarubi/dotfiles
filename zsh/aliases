@@ -33,6 +33,7 @@ alias be='bundle exec'
 alias bs='bundle show'
 alias brk='bundle exec rake'
 alias brl='bundle exec rails'
+alias berp='bundle exec rspec -d'
 
 # rails
 alias sc='script/console'
