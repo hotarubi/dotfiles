@@ -24,3 +24,5 @@ export PATH="~/Sites/12wbt-init/bin:$PATH"
 # http://robots.thoughtbot.com/post/27985816073/the-hitchhikers-guide-to-riding-a-mountain-lion
 # this lets you compile mysql + mysql2 gems on mountain lion
 export CPPFLAGS=-I/opt/X11/include
+
++[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *
