@@ -23,6 +23,8 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_display_mode = false
+    bootstrap_before = "mybootstrap#before"
+    bootstrap_after = "mybootstrap#after"
 
 [[custom_plugins]]
   name = "jacoborus/tender.vim"
@@ -49,3 +51,21 @@ auto-completion-tab-key-behavior = "smart"
 name = 'shell'
 default_position = 'top'
 default_height = 30
+
+[[layers]]
+  name = "lang#ruby"
+  repl_command = "pry"
+
+[[layers]]
+name = "lang#javascript"
+auto_fix = true
+
+[[layers]]
+name = "unite"
+
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'VersionControl'
+
