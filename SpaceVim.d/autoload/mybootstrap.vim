@@ -7,6 +7,7 @@ func! mybootstrap#before() abort
   \  '--ignore', 'build',
   \  '--ignore', 'tmp',
   \  '--ignore', 'coverage',
+  \  '--ignore', '.bundle',
   \  '--ignore', 'public/javascripts',
   \  '--ignore', 'public/stylesheets',
   \  '--ignore', 'public/uploads',
@@ -20,6 +21,10 @@ func! mybootstrap#before() abort
   \  '--ignore', 'app/assets/images',
   \  '--ignore', 'public/uploads',
   \  '-g', '']
+  let rg_profile = SpaceVim#mapping#search#getprofile('rg')
+  let rg_default_opt = profile.default_opts + ['-g', '!db/migrate', '-g', '!db/views', '-g', '!db/schema.rb',
+  \ '-g', '!*.csv']
+  call SpaceVim#mapping#search#profile({'rg' : {'default_opts' : rg_default_opt}})
 endf
 
 func! mybootstrap#after() abort
