@@ -1,4 +1,13 @@
 func! mybootstrap#before() abort
+  " Set up Vundle by run git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
+  set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
+  call vundle#begin('~/.dotfiles/vim/bundle')
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'mxw/vim-jsx'
+  Plugin 'chiel92/vim-autoformat'
+  call vundle#end()
+  filetype plugin indent on
+
   let g:unite_source_rec_async_command = 
   \ ['ag', '--nogroup', '--nocolor', '--column', '--hidden',
   \  '--ignore', '.git',
