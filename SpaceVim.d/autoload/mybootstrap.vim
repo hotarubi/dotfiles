@@ -5,6 +5,7 @@ func! mybootstrap#before() abort
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'mxw/vim-jsx'
   Plugin 'chiel92/vim-autoformat'
+  Plugin 'tpope/vim-surround'
   call vundle#end()
   filetype plugin indent on
 
