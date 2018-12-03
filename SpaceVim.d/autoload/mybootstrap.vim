@@ -6,8 +6,12 @@ func! mybootstrap#before() abort
   Plugin 'mxw/vim-jsx'
   Plugin 'chiel92/vim-autoformat'
   Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-dispatch'
+  Plugin 'thoughtbot/vim-rspec'
   call vundle#end()
   filetype plugin indent on
+  let g:rspec_command = 'Dispatch! rspec {spec}'
 
   let g:unite_source_rec_async_command = 
   \ ['ag', '--nogroup', '--nocolor', '--column', '--hidden',
@@ -32,10 +36,29 @@ func! mybootstrap#before() abort
   \  '--ignore', 'public/uploads',
   \  '-g', '']
   let rg_profile = SpaceVim#mapping#search#getprofile('rg')
-  let rg_default_opt = profile.default_opts + ['-g', '!db/migrate', '-g', '!db/views', '-g', '!db/schema.rb',
-  \ '-g', '!*.csv']
+  let rg_default_opt = rg_profile.default_opts + ['-g', '!db/migrate', '-g', '!db/views', '-g', '!db/schema.rb', '-g', '!*.csv']
   call SpaceVim#mapping#search#profile({'rg' : {'default_opts' : rg_default_opt}})
 endf
 
 func! mybootstrap#after() abort
+  call mybootstrap#rspec_mappings()
+endf
+
+func! mybootstrap#rspec_mappings() abort
+  let g:_spacevim_mappings_space.r.r = {'name' : '+Rspec'}
+  call SpaceVim#mapping#space#langSPC('nmap', ['r', 'r', 'c'],
+        \ 'call RunCurrentSpecFile()',
+        \ 'Run Current Spec', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['r', 'r', 'n'],
+        \ 'call RunNearestSpec()',
+        \ 'Run Nearest Spec', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['r', 'r', 'l'],
+        \ 'call RunLastSpec()',
+        \ 'Run Last Spec', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['r', 'r', 'a'],
+        \ 'call RunAllSpecs()',
+        \ 'Run All Spec', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['r', 'r', 'o'],
+        \ 'call dispatch#copen(!0)',
+        \ 'Open Spec Result', 1)
 endf
