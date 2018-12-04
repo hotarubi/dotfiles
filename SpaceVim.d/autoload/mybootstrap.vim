@@ -1,4 +1,15 @@
 func! mybootstrap#before() abort
+  call mybootstrap#vundle_install()  
+  let g:rspec_command = 'Dispatch! rspec {spec}'
+  call mybootstrap#unite_source_options()
+  call mybootstrap#rg_options()
+endf
+
+func! mybootstrap#after() abort
+  call mybootstrap#rspec_mappings()
+endf
+
+func! mybootstrap#vundle_install() abort
   " Set up Vundle by run git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
   set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
   call vundle#begin('~/.dotfiles/vim/bundle')
@@ -9,10 +20,12 @@ func! mybootstrap#before() abort
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-dispatch'
   Plugin 'thoughtbot/vim-rspec'
+  Plugin 'slim-template/vim-slim'
   call vundle#end()
   filetype plugin indent on
-  let g:rspec_command = 'Dispatch! rspec {spec}'
+endf
 
+func! mybootstrap#unite_source_options() abort
   let g:unite_source_rec_async_command = 
   \ ['ag', '--nogroup', '--nocolor', '--column', '--hidden',
   \  '--ignore', '.git',
@@ -35,13 +48,12 @@ func! mybootstrap#before() abort
   \  '--ignore', 'app/assets/images',
   \  '--ignore', 'public/uploads',
   \  '-g', '']
+endf
+
+func! mybootstrap#rg_options() abort
   let rg_profile = SpaceVim#mapping#search#getprofile('rg')
   let rg_default_opt = rg_profile.default_opts + ['-g', '!db/migrate', '-g', '!db/views', '-g', '!db/schema.rb', '-g', '!*.csv']
   call SpaceVim#mapping#search#profile({'rg' : {'default_opts' : rg_default_opt}})
-endf
-
-func! mybootstrap#after() abort
-  call mybootstrap#rspec_mappings()
 endf
 
 func! mybootstrap#rspec_mappings() abort
