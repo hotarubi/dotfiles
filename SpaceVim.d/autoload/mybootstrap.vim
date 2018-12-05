@@ -7,6 +7,7 @@ endf
 
 func! mybootstrap#after() abort
   call mybootstrap#rspec_mappings()
+  call mybootstrap#autoformat_mappings()
 endf
 
 func! mybootstrap#vundle_install() abort
@@ -54,6 +55,19 @@ func! mybootstrap#rg_options() abort
   let rg_profile = SpaceVim#mapping#search#getprofile('rg')
   let rg_default_opt = rg_profile.default_opts + ['-g', '!db/migrate', '-g', '!db/views', '-g', '!db/schema.rb', '-g', '!*.csv']
   call SpaceVim#mapping#search#profile({'rg' : {'default_opts' : rg_default_opt}})
+endf
+
+func! mybootstrap#autoformat_mappings() abort
+  let g:_spacevim_mappings_space.x.f = {'name' : '+Autoformat'}
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'a'],
+        \ 'Autoformat',
+        \ 'Auto-format', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 's'],
+        \ 'Autoformat sql',
+        \ 'Format SQL', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'j'],
+        \ 'Autoformat javascript',
+        \ 'Format Javascript', 1)
 endf
 
 func! mybootstrap#rspec_mappings() abort
