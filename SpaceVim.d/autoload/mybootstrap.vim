@@ -66,8 +66,20 @@ func! mybootstrap#autoformat_mappings() abort
         \ 'Autoformat sql',
         \ 'Format SQL', 1)
   call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'j'],
+        \ 'Autoformat JSON',
+        \ 'Format JSON', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'J'],
         \ 'Autoformat javascript',
         \ 'Format Javascript', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'c'],
+        \ 'Autoformat css',
+        \ 'Format CSS', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'x'],
+        \ 'Autoformat xml',
+        \ 'Format XML', 1)
+  call SpaceVim#mapping#space#langSPC('nmap', ['x', 'f', 'h'],
+        \ 'Autoformat html',
+        \ 'Format HTML', 1)
 endf
 
 func! mybootstrap#rspec_mappings() abort
