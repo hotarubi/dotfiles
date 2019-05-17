@@ -25,6 +25,7 @@
     bootstrap_before = "mybootstrap#before"
     bootstrap_after = "mybootstrap#after"
     enable_language_specific_leader = false
+    disabled_plugins = ["neomru.vim"]
 
 [[custom_plugins]]
   name = "jacoborus/tender.vim"
@@ -37,6 +38,10 @@
 [[custom_plugins]]
   name = "NLKNguyen/papercolor-theme"
   merged = 0
+
+[[custom_plugins]]
+   name = "Shougo/neomru.vim"
+   merged = 0
 
 [[layers]]
   name = "colorscheme"

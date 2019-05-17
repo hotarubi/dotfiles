@@ -22,6 +22,7 @@ func! mybootstrap#vundle_install() abort
   Plugin 'tpope/vim-dispatch'
   Plugin 'thoughtbot/vim-rspec'
   Plugin 'slim-template/vim-slim'
+  Plugin 'Shougo/neomru.vim'
   call vundle#end()
   filetype plugin indent on
 endf
