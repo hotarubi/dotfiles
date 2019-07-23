@@ -69,6 +69,9 @@ name = "lang#javascript"
 auto_fix = true
 
 [[layers]]
+  name = "lang#typescript"
+
+[[layers]]
 name = "unite"
 
 [[layers]]
