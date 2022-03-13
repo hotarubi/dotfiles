@@ -15,10 +15,8 @@ func! mybootstrap#vundle_install() abort
   set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
   call vundle#begin('~/.dotfiles/vim/bundle')
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'mxw/vim-jsx'
   Plugin 'chiel92/vim-autoformat'
   Plugin 'thoughtbot/vim-rspec'
-  Plugin 'slim-template/vim-slim'
   call vundle#end()
   filetype plugin indent on
 endf
