@@ -1,0 +1,1 @@
+/Users/fduan/Development/config_files/zsh/colors.zsh

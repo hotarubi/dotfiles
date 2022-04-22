@@ -17,6 +17,7 @@ func! mybootstrap#vundle_install() abort
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'chiel92/vim-autoformat'
   Plugin 'thoughtbot/vim-rspec'
+  Plugin 'jvirtanen/vim-hcl'
   call vundle#end()
   filetype plugin indent on
 endf

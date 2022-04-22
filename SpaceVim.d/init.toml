@@ -72,6 +72,9 @@ auto_fix = true
   name = "lang#typescript"
 
 [[layers]]
+  name = "lang#kotlin"
+
+[[layers]]
 name = "unite"
 
 [[layers]]
