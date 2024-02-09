@@ -1,1 +1,0 @@
-/Users/fduan/Development/config_files/zsh/history.zsh

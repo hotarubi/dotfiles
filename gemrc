@@ -2,8 +2,7 @@
 :backtrace: false
 :bulk_threshold: 1000
 :sources:
-- https://gems.vip.global.square/
-- https://gems.vip.global.square/private/
+- https://rubygems.org
 :update_sources: true
 :verbose: true
 :concurrent_downloads: 8
