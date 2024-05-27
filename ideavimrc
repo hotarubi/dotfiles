@@ -6,6 +6,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tommcdo/vim-exchange'
 Plug 'machakann/vim-highlightedyank'
 Plug 'dbakker/vim-paragraph-motion'
+packadd matchit
 set quickscope
 set ideajoin
-packadd matchit
+set relativenumber
+set number
