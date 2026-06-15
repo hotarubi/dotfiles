@@ -11,3 +11,7 @@ set quickscope
 set ideajoin
 set relativenumber
 set number
+
+" Hacks
+nmap u <Action>($Undo)
+nmap <C-r> <Action>($Redo)

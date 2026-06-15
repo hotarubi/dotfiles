@@ -1,11 +1,12 @@
 require 'rake'
 require 'erb'
+require 'fileutils'
 
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README.rdoc LICENSE].include? file
+    next if %w[Rakefile README.rdoc LICENSE nvim].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
@@ -29,6 +30,23 @@ task :install do
     else
       link_file(file)
     end
+  # nvim config goes to ~/.config/nvim (not ~/.nvim)
+  nvim_src = File.join(Dir.pwd, 'nvim')
+  nvim_dst = File.join(ENV['HOME'], '.config', 'nvim')
+  FileUtils.mkdir_p(File.join(ENV['HOME'], '.config'))
+  if File.exist?(nvim_dst) || File.symlink?(nvim_dst)
+    if File.identical?(nvim_src, nvim_dst)
+      puts "identical ~/.config/nvim"
+    else
+      print "overwrite ~/.config/nvim? [yn] "
+      if $stdin.gets.chomp == 'y'
+        system %(rm -rf "#{nvim_dst}")
+        system %(ln -s "#{nvim_src}" "#{nvim_dst}")
+      end
+    end
+  else
+    puts "linking ~/.config/nvim"
+    system %(ln -s "#{nvim_src}" "#{nvim_dst}")
   end
 end
 
