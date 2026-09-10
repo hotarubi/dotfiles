@@ -41,7 +41,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # TTD identifiers and secrets (from ttd-dotfiles)
 [[ -f ~/.zsh/ttd-ids.zsh              ]] && source ~/.zsh/ttd-ids.zsh
 [[ -f ~/.zsh/ttd-secrets.zsh          ]] && source ~/.zsh/ttd-secrets.zsh
-[[ -f ~/.zsh/post-mr-push-wrapper.zsh ]] && source ~/.zsh/post-mr-push-wrapper.zsh
+# Disabled 2026-09-10 — post-mr-workflow was firing on every MR push; uncomment to re-enable.
+# [[ -f ~/.zsh/post-mr-push-wrapper.zsh ]] && source ~/.zsh/post-mr-push-wrapper.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
