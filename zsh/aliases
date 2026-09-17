@@ -50,3 +50,7 @@ alias %=' '
 
 # utilities
 alias md='glow -p'
+
+# ucode / Databricks AI Gateway
+alias ugcl='ug claude --enable-model-discovery'
+alias ugcx="ug codex -c 'model_catalog_json=\"~/.codex/ucode-model-catalog.json\"'"
